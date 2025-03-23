@@ -1,0 +1,4 @@
+read_ddc inccomp.ddc
+source backward.do
+
+report_power -include_input_nets -net > 32_report_power_net_saif.txt

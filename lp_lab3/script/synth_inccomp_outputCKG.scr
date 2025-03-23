@@ -1,0 +1,34 @@
+sh mkdir WORK
+define_design_lib WORK -path ./WORK
+analyze -format vhdl ../inccomp_output.vhd
+elaborate inccomp -architecture behavioral -library WORK
+uniquify
+compile -exact_map
+create_clock -name ck -period 5 {ck}
+report_power -include_input_nets > 32noCKGoutput_report_power_noSW.txt
+report_power -net -include_input_nets > 32noCKGoutput_report_power_net_noSW.txt
+set_switching_activity -static_probability 0.5 -toggle_rate 2 -base_clock ck {ck}
+set_switching_activity -static_probability 0 -base_clock ck {rst}
+report_power -include_input_nets > 32noCKGoutput_report_power_SW_ck_rst.txt
+report_power -net -include_input_nets > 32noCKGoutput_report_power_net_SW_ck_rst.txt
+set_switching_activity -static_probability 0.15 -toggle_rate 0.025 -base_clock ck {INCA INCB}
+report_power -include_input_nets > 32noCKGoutput_report_power_SW_incA_incB.txt
+report_power -net -include_input_nets > 32noCKGoutput_report_power_net_SW_incA_incB.txt
+report_cell > 32noCKGoutput_report_cell_SW_incA_incB.txt
+
+remove_design -designs
+analyze -format vhdl ../inccomp_output.vhd
+elaborate inccomp -architecture behavioral -library WORK
+uniquify
+compile -exact_map -gate_clock
+create_clock -name ck -period 5 {ck}
+report_power -include_input_nets > 32CKGoutput_report_power_noSW.txt
+report_power -net -include_input_nets > 32CKGoutput_report_power_net_noSW.txt
+set_switching_activity -static_probability 0.5 -toggle_rate 2 -base_clock ck {ck}
+set_switching_activity -static_probability 0 -base_clock ck {rst}
+report_power -include_input_nets > 32CKGoutput_report_power_SW_ck_rst.txt
+report_power -net -include_input_nets > 32CKGoutput_report_power_net_SW_ck_rst.txt
+set_switching_activity -static_probability 0.15 -toggle_rate 0.025 -base_clock ck {INCA INCB}
+report_power -include_input_nets > 32CKGoutput_report_power_SW_incA_incB.txt
+report_power -net -include_input_nets > 32CKGoutput_report_power_net_SW_incA_incB.txt
+report_cell > 32CKGoutput_report_cell_SW_incA_incB.txt
