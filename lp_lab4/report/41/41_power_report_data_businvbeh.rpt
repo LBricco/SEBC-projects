@@ -1,0 +1,33 @@
+Power Report Interval
+100000000 ps
+
+Power Report                        Node     Tc    Ti   Time At 1   Time At 0  Time At X
+----------------------------------------------------------------------------------------
+                           /testbench/ck  20000     0    50000000    50000000          0
+                          /testbench/rst      2     0         200    99999800          0
+                         /testbench/A(7)   4974     0    50030000    49970000          0
+                         /testbench/A(6)   5022     0    49460000    50540000          0
+                         /testbench/A(5)   4987     0    49384900    50615100          0
+                         /testbench/A(4)   4972     0    49970000    50030000          0
+                         /testbench/A(3)   4960     0    51250000    48750000          0
+                         /testbench/A(2)   4965     0    49894900    50105100          0
+                         /testbench/A(1)   5024     0    50000000    50000000          0
+                         /testbench/A(0)   5060     0    49940000    50060000          0
+            /testbench/COUNTBUSINVBEH(8)   3650     0    49260000    50739900        100
+            /testbench/COUNTBUSINVBEH(7)   3576     0    48810000    51189900        100
+            /testbench/COUNTBUSINVBEH(6)   3611     0    49595000    50404900        100
+            /testbench/COUNTBUSINVBEH(5)   3617     0    52235000    47764900        100
+            /testbench/COUNTBUSINVBEH(4)   3640     0    50190000    49809900        100
+            /testbench/COUNTBUSINVBEH(3)   3613     0    49685000    50314900        100
+            /testbench/COUNTBUSINVBEH(2)   3601     0    50405000    49594900        100
+            /testbench/COUNTBUSINVBEH(1)   3639     0    50295000    49704900        100
+            /testbench/COUNTBUSINVBEH(0)   3722     0    51500000    48499900        100
+                /testbench/CBUSINVBEH(7)   4973     0    50025000    49974900        100
+                /testbench/CBUSINVBEH(6)   5021     0    49445000    50554900        100
+                /testbench/CBUSINVBEH(5)   4987     0    49365000    50634900        100
+                /testbench/CBUSINVBEH(4)   4972     0    49970000    50029900        100
+                /testbench/CBUSINVBEH(3)   4958     0    51240000    48759900        100
+                /testbench/CBUSINVBEH(2)   4964     0    49880000    50119900        100
+                /testbench/CBUSINVBEH(1)   5023     0    49985000    50014900        100
+                /testbench/CBUSINVBEH(0)   5060     0    49940000    50059900        100
+----------------------------------------------------------------------------------------

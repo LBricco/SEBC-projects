@@ -1,0 +1,21 @@
+# Selects the inputs type...
+#
+source ../datatype.def
+
+variable period 10
+set load1 15
+set load2 75
+set load3 150
+variable normtag "_BUSNORM_"
+variable invtag  "_BUSINV_"
+variable trantag "_BUSTRAN_"
+variable graytag "_BUSGRAY_"
+variable t0tag "_BUST0_"
+
+variable extension ".txt"
+
+variable norme "ubusnorm"
+variable inve "ubusinv"
+variable trane "ubustran"
+variable graye "ubusgray"
+variable t0e "ubust0"

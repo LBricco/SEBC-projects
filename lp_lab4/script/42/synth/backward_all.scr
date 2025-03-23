@@ -1,0 +1,26 @@
+source definitions.scr
+
+read_ddc busnormal.ddc
+set BUSTYPE "UBUSNORM"
+set annotateentity $norme
+source backward.scr
+
+read_ddc businvbeh.ddc
+set BUSTYPE "UBUSINV"
+set annotateentity $inve
+source backward.scr
+
+read_ddc transbased.ddc
+set BUSTYPE "UBUSTRAN"
+set annotateentity $trane
+source backward.scr
+
+read_ddc grayencoder.ddc
+set BUSTYPE "UBUSGRAY"
+set annotateentity $graye
+source backward.scr
+
+read_ddc t0encoder.ddc
+set BUSTYPE "UBUST0"
+set annotateentity $t0e
+source backward.scr

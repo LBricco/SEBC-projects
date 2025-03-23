@@ -1,0 +1,32 @@
+Power Report Interval
+100000000 ps
+
+Power Report                        Node     Tc    Ti   Time At 1   Time At 0  Time At X
+----------------------------------------------------------------------------------------
+                           /testbench/ck  20000     0    50000000    50000000          0
+                          /testbench/rst      2     0         200    99999800          0
+                         /testbench/A(7)   4974     0    50030000    49970000          0
+                         /testbench/A(6)   5022     0    49460000    50540000          0
+                         /testbench/A(5)   4987     0    49384900    50615100          0
+                         /testbench/A(4)   4972     0    49970000    50030000          0
+                         /testbench/A(3)   4960     0    51250000    48750000          0
+                         /testbench/A(2)   4965     0    49894900    50105100          0
+                         /testbench/A(1)   5024     0    50000000    50000000          0
+                         /testbench/A(0)   5060     0    49940000    50060000          0
+              /testbench/COUNTBUSNORM(7)   4974     0    50030000    49969900        100
+              /testbench/COUNTBUSNORM(6)   5021     0    49455000    50544900        100
+              /testbench/COUNTBUSNORM(5)   4987     0    49375000    50624900        100
+              /testbench/COUNTBUSNORM(4)   4972     0    49970000    50029900        100
+              /testbench/COUNTBUSNORM(3)   4959     0    51245000    48754900        100
+              /testbench/COUNTBUSNORM(2)   4965     0    49885000    50114900        100
+              /testbench/COUNTBUSNORM(1)   5023     0    49995000    50004900        100
+              /testbench/COUNTBUSNORM(0)   5060     0    49940000    50059900        100
+                  /testbench/CBUSNORM(7)   4973     0    50025000    49974900        100
+                  /testbench/CBUSNORM(6)   5021     0    49445000    50554900        100
+                  /testbench/CBUSNORM(5)   4987     0    49365000    50634900        100
+                  /testbench/CBUSNORM(4)   4972     0    49970000    50029900        100
+                  /testbench/CBUSNORM(3)   4958     0    51240000    48759900        100
+                  /testbench/CBUSNORM(2)   4964     0    49880000    50119900        100
+                  /testbench/CBUSNORM(1)   5023     0    49985000    50014900        100
+                  /testbench/CBUSNORM(0)   5060     0    49940000    50059900        100
+----------------------------------------------------------------------------------------

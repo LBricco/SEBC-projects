@@ -1,0 +1,19 @@
+# Defines DATA TYPE
+do datatype.def
+
+# Loads the technological library and the SDFs
+vsim -voptargs=+acc -L /eda/dk/nangate45/verilog/qsim2020.4 -sdftyp /testbench/UBUSNORM=busnormal.sdf -sdftyp /testbench/UBUSINV=businvbeh.sdf -sdftyp /testbench/UBUSTRAN=transbased.sdf -sdftyp /testbench/UBUSGRAY=grayencoder.sdf work.testbench -t 1ps +nowarnTSCALE
+
+#add wave *
+
+# Generates the VCD file and add all the DUT signals
+vcd file frommentor_$DATATYPE.vcd
+vcd add /testbench/UBUSNORM/*
+vcd add /testbench/UBUSINV/*
+vcd add /testbench/UBUSTRAN/*
+vcd add /testbench/UBUSGRAY/*
+vcd add /testbench/UBUST0/*
+
+
+# runs the simulation
+run 100us

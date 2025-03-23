@@ -1,0 +1,106 @@
+Information: Updating design information... (UID-85)
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+ 
+****************************************
+Report : power
+        -net
+        -cell
+        -analysis_effort low
+        -include_input_nets
+        -sort_mode dynamic_power
+Design : busnormal
+Version: S-2021.06-SP4
+Date   : Mon May  6 18:33:18 2024
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/mg.lowpower/do/libnangate/NangateOpenCellLibrary_typical_ecsm.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+busnormal              5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+
+  Attributes
+  ----------
+      a  -  Switching activity information annotated on net
+      d  -  Default switching activity information on net
+
+                             Total      Static   Toggle   Switching
+Net                          Net Load   Prob.    Rate     Power      Attrs
+--------------------------------------------------------------------------------
+ck                            24.856    0.500    0.2000      3.0076  a
+B[0]                          16.827    0.499    0.0506      0.5152  a
+B[1]                          16.827    0.500    0.0502      0.5114  a
+B[6]                          16.827    0.494    0.0502      0.5113  a
+B[5]                          16.827    0.493    0.0499      0.5078  a
+B[7]                          16.827    0.500    0.0497      0.5063  a
+B[4]                          16.827    0.499    0.0497      0.5062  a
+B[2]                          16.827    0.499    0.0497      0.5055  a
+B[3]                          16.827    0.512    0.0496      0.5047  a
+C[0]                           0.310    0.499    0.0506      0.0095  a
+C[1]                           0.310    0.500    0.0502      0.0094  a
+C[6]                           0.310    0.494    0.0502      0.0094  a
+C[5]                           0.310    0.493    0.0499      0.0093  a
+C[7]                           0.310    0.500    0.0497      0.0093  a
+C[4]                           0.310    0.499    0.0497      0.0093  a
+C[2]                           0.310    0.499    0.0497      0.0093  a
+C[3]                           0.310    0.512    0.0496      0.0093  a
+A[0]                           1.438    0.500    0.0506      0.0440  a
+A[1]                           1.438    0.500    0.0502      0.0437  a
+A[6]                           1.438    0.495    0.0502      0.0437  a
+A[5]                           1.438    0.494    0.0499      0.0434  a
+A[7]                           1.438    0.500    0.0497      0.0433  a
+A[4]                           1.438    0.500    0.0497      0.0433  a
+A[2]                           1.438    0.499    0.0497      0.0432  a
+A[3]                           1.438    0.513    0.0496      0.0431  a
+n2                            37.687    1.000    0.20e-4     0.0005  d
+rst                            2.010    0.000    0.20e-4  2.433e-05  a
+--------------------------------------------------------------------------------
+Total (27 nets)                                              7.4990 uW
+
+
+  Attributes
+  ----------
+      h  -  Hierarchical cell
+
+                        Cell      Driven Net  Tot Dynamic      Cell
+                        Internal  Switching   Power            Leakage
+Cell                    Power     Power       (% Cell/Tot)     Power      Attrs
+--------------------------------------------------------------------------------
+buss_reg[0]                0.8945    0.5152      1.410 (63%)     88.2518   
+buss_reg[1]                0.8905    0.5114      1.402 (64%)     88.2516   
+buss_reg[6]                0.8904    0.5113      1.402 (64%)     88.2491   
+buss_reg[5]                0.8868    0.5078      1.395 (64%)     88.2487   
+buss_reg[7]                0.8852    0.5063      1.392 (64%)     88.2523   
+buss_reg[4]                0.8851    0.5062      1.391 (64%)     88.2520   
+buss_reg[2]                0.8843    0.5055      1.390 (64%)     88.2511   
+buss_reg[3]                0.8839    0.5047      1.389 (64%)     88.2594   
+C_reg[0]                   0.8823 9.483e-03      0.892 (99%)     88.2500   
+C_reg[1]                   0.8785 9.413e-03      0.888 (99%)     88.2498   
+C_reg[6]                   0.8783 9.409e-03      0.888 (99%)     88.2472   
+C_reg[5]                   0.8749 9.348e-03      0.884 (99%)     88.2468   
+C_reg[7]                   0.8733 9.319e-03      0.883 (99%)     88.2500   
+C_reg[4]                   0.8731 9.316e-03      0.882 (99%)     88.2501   
+C_reg[2]                   0.8725 9.305e-03      0.882 (99%)     88.2493   
+C_reg[3]                   0.8720 9.290e-03      0.881 (99%)     88.2572   
+U5                      1.966e-05 4.561e-04   4.76e-04 (4%)      10.1022   
+--------------------------------------------------------------------------------
+Totals (17 cells)         14.106uW   4.144uW    18.249uW (77%)    1.422uW
+1

@@ -1,0 +1,32 @@
+Power Report Interval
+100000000 ps
+
+Power Report                        Node     Tc    Ti   Time At 1   Time At 0  Time At X
+----------------------------------------------------------------------------------------
+                           /testbench/ck  20000     0    50000000    50000000          0
+                          /testbench/rst      2     0         200    99999800          0
+                         /testbench/A(7)     97     0    48164900    51835100          0
+                         /testbench/A(6)    118     0    37760000    62240000          0
+                         /testbench/A(5)    312     0    49927000    50073000          0
+                         /testbench/A(4)    625     0    49931900    50068100          0
+                         /testbench/A(3)   1250     0    50007000    49993000          0
+                         /testbench/A(2)   2500     0    50007000    49993000          0
+                         /testbench/A(1)   5000     0    50007000    49993000          0
+                         /testbench/A(0)  10000     0    50007000    49993000          0
+           /testbench/COUNTTRANSBASED(7)   4816     0    24080000    75919900        100
+           /testbench/COUNTTRANSBASED(6)   3776     0    18880000    81119900        100
+           /testbench/COUNTTRANSBASED(5)   4992     0    24960000    75039900        100
+           /testbench/COUNTTRANSBASED(4)   4992     0    24960000    75039900        100
+           /testbench/COUNTTRANSBASED(3)   5000     0    25000000    74999900        100
+           /testbench/COUNTTRANSBASED(2)   5000     0    25000000    74999900        100
+           /testbench/COUNTTRANSBASED(1)   5000     0    25000000    74999900        100
+           /testbench/COUNTTRANSBASED(0)   5000     0    50000000    49999900        100
+               /testbench/CTRANSBASED(7)     97     0    48145000    51854900        100
+               /testbench/CTRANSBASED(6)    118     0    37760000    62239900        100
+               /testbench/CTRANSBASED(5)    312     0    49920000    50079900        100
+               /testbench/CTRANSBASED(4)    624     0    49920000    50079900        100
+               /testbench/CTRANSBASED(3)   1249     0    49985000    50014900        100
+               /testbench/CTRANSBASED(2)   2499     0    49985000    50014900        100
+               /testbench/CTRANSBASED(1)   4999     0    49985000    50014900        100
+               /testbench/CTRANSBASED(0)   9998     0    49990000    50009900        100
+----------------------------------------------------------------------------------------

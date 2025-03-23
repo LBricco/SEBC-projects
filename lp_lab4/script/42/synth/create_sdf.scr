@@ -1,0 +1,61 @@
+source definitions.scr
+
+# busnormal
+variable targetcompilation "../busnormal.vhd"
+variable top_hierarchy "busnormal"
+analyze -format vhdl $targetcompilation
+elaborate -library work $top_hierarchy 
+compile -exact_map
+write -hierarchy -format ddc -output $top_hierarchy.ddc
+ungroup -all -flatten
+change_names -hierarchy -rules verilog
+write_sdf ../$top_hierarchy.sdf
+write -f verilog -hierarchy -output ../fromsynopsys$normtag.v
+
+# businvert
+variable targetcompilation "../businvbeh.vhd"
+variable top_hierarchy "businvbeh"
+analyze -format vhdl $targetcompilation
+elaborate -library work $top_hierarchy 
+compile -exact_map
+write -hierarchy -format ddc -output $top_hierarchy.ddc
+ungroup -all -flatten
+change_names -hierarchy -rules verilog
+write_sdf ../$top_hierarchy.sdf
+write -f verilog -hierarchy -output ../fromsynopsys$invtag.v
+
+# transbased
+variable targetcompilation "../transbased.vhd"
+variable top_hierarchy "transbased"
+analyze -format vhdl $targetcompilation
+elaborate -library work $top_hierarchy 
+compile -exact_map
+write -hierarchy -format ddc -output $top_hierarchy.ddc
+ungroup -all -flatten
+change_names -hierarchy -rules verilog
+write_sdf ../$top_hierarchy.sdf
+write -f verilog -hierarchy -output ../fromsynopsys$trantag.v
+
+# grayencoder
+variable targetcompilation "../grayencoder.vhd"
+variable top_hierarchy "grayencoder"
+analyze -format vhdl $targetcompilation
+elaborate -library work $top_hierarchy 
+compile -exact_map
+write -hierarchy -format ddc -output $top_hierarchy.ddc
+ungroup -all -flatten
+change_names -hierarchy -rules verilog
+write_sdf ../$top_hierarchy.sdf
+write -f verilog -hierarchy -output ../fromsynopsys$graytag.v
+
+# t0encoder
+variable targetcompilation "../t0encoder.vhd"
+variable top_hierarchy "t0encoder"
+analyze -format vhdl $targetcompilation
+elaborate -library work $top_hierarchy 
+compile -exact_map
+write -hierarchy -format ddc -output $top_hierarchy.ddc
+ungroup -all -flatten
+change_names -hierarchy -rules verilog
+write_sdf ../$top_hierarchy.sdf
+write -f verilog -hierarchy -output ../fromsynopsys$t0tag.v

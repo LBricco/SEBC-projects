@@ -1,0 +1,29 @@
+Power Report Interval
+100000000 ps
+
+Power Report                        Node     Tc     Ti   Time At 1  Time At 0  Time At X
+----------------------------------------------------------------------------------------
+                           /testbench/ck  20000      0    50000000   50000000          0
+                          /testbench/rst      2      0         200   99999800          0
+                         /testbench/A(7)   4974      0    50030000   49970000          0
+                         /testbench/A(6)   5022      0    49460000   50540000          0
+                         /testbench/A(5)   4987      0    49384900   50615100          0
+                         /testbench/A(4)   4972      0    49970000   50030000          0
+                         /testbench/A(3)   4960      0    51250000   48750000          0
+                         /testbench/A(2)   4965      0    49894900   50105100          0
+                         /testbench/A(1)   5024      0    50000000   50000000          0
+                         /testbench/A(0)   5060      0    49940000   50060000          0
+          /testbench/COUNTGRAYENCODER(7)   4974      0    50030000   49969900        100
+          /testbench/COUNTGRAYENCODER(6)   5087      0    50105000   49894900        100
+          /testbench/COUNTGRAYENCODER(5)   4952      0    50100000   49899900        100
+          /testbench/COUNTGRAYENCODER(4)   4981      0    50505000   49494900        100
+          /testbench/COUNTGRAYENCODER(3)   4937      0    49415000   50584900        100
+          /testbench/COUNTGRAYENCODER(2)   5056      0    50320000   49679900        100
+          /testbench/COUNTGRAYENCODER(1)   4962      0    50710000   49289900        100
+          /testbench/COUNTGRAYENCODER(0)   5075      0    49715000   50284900        100
+              /testbench/CGRAYENCODER(7)   4973      0    50025000   49974900        100
+              /testbench/CGRAYENCODER(6)   5021   2519    49445000   50554900        100
+              /testbench/CGRAYENCODER(5)   2455   6278    49365000   50634900        100
+              /testbench/CGRAYENCODER(4)      5  10619    49970000   50029900        100
+              /testbench/CGRAYENCODER(3)      1  15261    51240000   48759900        100
+----------------------------------------------------------------------------------------

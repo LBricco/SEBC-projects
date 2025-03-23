@@ -1,0 +1,2 @@
+variable powerfile "power_report$BUSTYPE$loadset$DATATYPE$extension"
+report_power -net -cell -include_input_nets > $powerfile
