@@ -1,0 +1,50 @@
+analyze -f VHDL -lib work ../src/configpkg.vhd
+analyze -f VHDL -lib work ../src/Gates/XOR2.vhd
+analyze -f VHDL -lib work ../src/Gates/AND2.vhd
+analyze -f VHDL -lib work ../src/Gates/NAND2.vhd
+analyze -f VHDL -lib work ../src/Gates/OAI21.vhd
+analyze -f VHDL -lib work ../src/Gates/FLIPFLOP.vhd
+analyze -f VHDL -lib work ../src/Gates/FA.vhd
+analyze -f VHDL -lib work ../src/Gates/HA.vhd
+analyze -f VHDL -lib work ../src/Gates/Memory.vhd
+analyze -f VHDL -lib work ../src/Blocks/Reg.vhd
+analyze -f VHDL -lib work ../src/Blocks/Adder.vhd
+analyze -f VHDL -lib work ../src/Blocks/Multiplier.vhd
+analyze -f VHDL -lib work ../src/Blocks/Logic.vhd
+analyze -f VHDL -lib work ../src/Blocks/LUT.vhd
+analyze -f VHDL -lib work ../src/PMU.vhd
+analyze -f VHDL -lib work ../src/top_level.vhd
+analyze -f VHDL -lib work ../src/dummyALU.vhd
+
+set power_preserve_rtl_hier_names true
+
+elaborate dummyALU -arch structure
+
+source -echo -verb power.upf
+
+##-------------------------------------STEP1: VDD
+## Tensioni di alimentazione PRIMA della compilazione
+set_voltage 1.2 -obj {VDDMPG}
+set_voltage 1.2 -obj {VDDAPG}
+set_voltage 1.2 -obj {VDDLPG}
+set_voltage 1.2 -obj {VDDLUPG}
+
+set_voltage 1.2 -obj {VDDM}
+set_voltage 1.2 -obj {VDDA}
+set_voltage 1.2 -obj {VDDL}
+set_voltage 1.2 -obj {VDDLU}
+
+set_voltage 1.2 -obj {VBACK}
+set_voltage 0 -obj {VSS}
+
+##-------------------------------------STEP2: CONSTRAINTS
+create_clock -name MYclk -period 5.0 {clk}
+set_dont_touch_network MYclk
+
+##--------------------------------------STEP3: SYNTHESIS
+compile_ultra
+
+##-------------------------------------STEP4: results
+report_timing > ./results/62_HHHH_timing.txt
+report_area -hier > ./results/62_HHHH_area.txt
+report_power -hier > ./results/62_HHHH_power.txt

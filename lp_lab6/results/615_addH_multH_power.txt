@@ -1,0 +1,46 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : dummyALU
+Version: S-2021.06-SP4
+Date   : Mon Jun  3 18:05:26 2024
+****************************************
+
+
+Library(s) Used:
+
+    saed90nm_typ_hvt (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ_hvt.db)
+    saed90nm_typ_nthh_hvt_lsh (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters/saed90nm_typ_nthh_hvt_lsh.db)
+    saed90nm_typ_nthh_hvt_lshss (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters_ss/saed90nm_typ_nthh_hvt_lshss.db)
+    saed90nm_typ_nthh_lshss (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters_ss/saed90nm_typ_nthh_lshss.db)
+    saed90nm_typ (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ.db)
+    saed90nm_typ_lvt (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ_lvt.db)
+    saed90nm_typ_nthh_lvt_lshss (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters_ss/saed90nm_typ_nthh_lvt_lshss.db)
+    saed90nm_typ_rdr_hvt (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/retention/with_async_reset/saed90nm_typ_rdr_hvt.db)
+
+
+Global Operating Voltage = 1.2  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+dummyALU                                 20.533   73.524 2.64e+07  120.457 100.0
+  comp_top_level (top_level)             18.975   71.879 2.63e+07  117.111  97.2
+    Adder_1 (Adder_nbit8)                 1.850    5.668 5.72e+05    8.090   6.7
+    Multiplier_1 (Multiplier_nbit8)      12.534   40.627 2.24e+07   75.544  62.7
+    ff_out (Reg_nbit16)                2.87e-03    2.897 7.87e+05    3.686   3.1
+    ff_mul_in_b (Reg_nbit8_0)             0.383    3.122 4.93e+05    3.998   3.3
+    ff_mul_in_a (Reg_nbit8_1)             0.385    2.961 4.93e+05    3.840   3.2
+    ff_sum_in_b (Reg_nbit8_2)             0.401    2.554 4.93e+05    3.448   2.9
+    ff_sum_in_a (Reg_nbit8_3)             0.400    2.550 4.93e+05    3.443   2.9
+1

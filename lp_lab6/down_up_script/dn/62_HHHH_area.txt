@@ -1,0 +1,58 @@
+ 
+****************************************
+Report : area
+Design : dummyALU
+Version: S-2021.06-SP4
+Date   : Tue Jun  4 17:23:11 2024
+****************************************
+
+Library(s) Used:
+
+    saed90nm_typ_hvt (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ_hvt.db)
+    saed90nm_typ (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ.db)
+    saed90nm_typ_nthh_hvt_lsh (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters/saed90nm_typ_nthh_hvt_lsh.db)
+    saed90nm_typ_nthh_lsh (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters/saed90nm_typ_nthh_lsh.db)
+    saed90nm_typ_nthh_hvt_lshss (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters_ss/saed90nm_typ_nthh_hvt_lshss.db)
+    saed90nm_typ_nthh_lshss (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters_ss/saed90nm_typ_nthh_lshss.db)
+    saed90nm_typ_rdr_hvt (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/retention/with_async_reset/saed90nm_typ_rdr_hvt.db)
+
+Number of ports:                          295
+Number of nets:                           792
+Number of cells:                          523
+Number of combinational cells:            459
+Number of sequential cells:                53
+Number of macros/black boxes:               0
+Number of buf/inv:                         30
+Number of references:                       9
+
+Combinational area:               4683.571254
+Buf/Inv area:                      168.652804
+Noncombinational area:            2822.860800
+Macro/Black Box area:                0.000000
+Net Interconnect area:             287.649827
+
+Total cell area:                  7506.432054
+Total area:                       7794.081881
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  ---------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
+                                  Total      Total    national   national   boxes   Design
+--------------------------------  ---------  -------  ---------  ---------  ------  ----------------
+dummyALU                          7506.4321    100.0    82.0224   223.9488  0.0000  dummyALU
+comp_top_level                    7200.4609     95.9  1147.3920   129.0240  0.0000  top_level
+comp_top_level/Adder_1             305.9712      4.1   305.9712     0.0000  0.0000  Adder_nbit8
+comp_top_level/LUT_1               136.3968      1.8   136.3968     0.0000  0.0000  LUT
+comp_top_level/Logic_1             346.5216      4.6   346.5216     0.0000  0.0000  Logic
+comp_top_level/Multiplier_1       2665.2672     35.5  2665.2672     0.0000  0.0000  Multiplier_nbit8
+comp_top_level/ff_LUT              493.9776      6.6     0.0000   493.9776  0.0000  Reg_nbit8_0
+comp_top_level/ff_a                493.9776      6.6     0.0000   493.9776  0.0000  Reg_nbit8_2
+comp_top_level/ff_b                493.9776      6.6     0.0000   493.9776  0.0000  Reg_nbit8_1
+comp_top_level/ff_out              987.9552     13.2     0.0000   987.9552  0.0000  Reg_nbit16
+--------------------------------  ---------  -------  ---------  ---------  ------  ----------------
+Total                                                 4683.5713  2822.8608  0.0000
+
+1

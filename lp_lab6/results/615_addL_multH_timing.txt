@@ -1,0 +1,69 @@
+Warning: No operating condition has been set explicitly on the current design. A default operating condition will be assumed. (MV-028)
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : dummyALU
+Version: S-2021.06-SP4
+Date   : Mon Jun  3 18:05:23 2024
+****************************************
+Wire Load Model Mode: enclosed
+
+  Startpoint: comp_top_level/ff_sum_in_a/CELL_0/FLIPFLOP_0/QTemp_reg
+              (rising edge-triggered flip-flop clocked by MYclk)
+  Endpoint: comp_top_level/ff_out/CELL_7/FLIPFLOP_0/QTemp_reg
+            (rising edge-triggered flip-flop clocked by MYclk)
+  Path Group: MYclk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  dummyALU           16000                 saed90nm_typ_lvt
+  top_level          8000                  saed90nm_typ_lvt
+  Adder_nbit8        8000                  saed90nm_typ_lvt
+
+  Point                                                   Incr       Path      Voltage
+  ------------------------------------------------------------------------------------
+  clock MYclk (rise edge)                                 0.00       0.00      
+  clock network delay (ideal)                             0.00       0.00      
+  comp_top_level/ff_sum_in_a/CELL_0/FLIPFLOP_0/QTemp_reg/CLK (RDFFARX1_HVT)
+                                                          0.00       0.00 r    1.20
+  comp_top_level/ff_sum_in_a/CELL_0/FLIPFLOP_0/QTemp_reg/Q (RDFFARX1_HVT)
+                                                          0.17       0.17 f    1.20
+  comp_top_level/ff_sum_in_a/Q[0] (Reg_nbit8_3)           0.00       0.17 f    
+  comp_top_level/Adder_1/A[0] (Adder_nbit8)               0.00       0.17 f    
+  comp_top_level/Adder_1/A[0]_UPF_LS/Q (LSDNSSX1_HVT)     0.17       0.34 f    0.80
+  comp_top_level/Adder_1/U1/Q (AND2X1_HVT)                0.21       0.55 f    0.80
+  comp_top_level/Adder_1/intadd_8/U7/CO (FADDX1_HVT)      0.44       0.99 f    0.80
+  comp_top_level/Adder_1/intadd_8/U6/CO (FADDX1_HVT)      0.42       1.41 f    0.80
+  comp_top_level/Adder_1/intadd_8/U5/CO (FADDX1_HVT)      0.42       1.83 f    0.80
+  comp_top_level/Adder_1/intadd_8/U4/CO (FADDX1_HVT)      0.42       2.25 f    0.80
+  comp_top_level/Adder_1/intadd_8/U3/CO (FADDX1_HVT)      0.42       2.68 f    0.80
+  comp_top_level/Adder_1/intadd_8/U2/CO (FADDX1_HVT)      0.40       3.08 f    0.80
+  comp_top_level/Adder_1/U2/Q (XOR3X1_HVT)                0.57       3.64 f    0.80
+  comp_top_level/Adder_1/SUM[7] (Adder_nbit8)             0.00       3.64 f    
+  comp_top_level/snps_PD1__iso_cell_PD1_snps_SUM[7]_UPF_ISO/Q (LSUPENX1_HVT)
+                                                          0.24       3.88 f    1.20
+  comp_top_level/U25/Q (MUX21X1_HVT)                      0.14       4.02 f    1.20
+  comp_top_level/ff_out/D[7] (Reg_nbit16)                 0.00       4.02 f    
+  comp_top_level/ff_out/CELL_7/FLIPFLOP_0/QTemp_reg/D (RDFFARX1_HVT)
+                                                          0.02       4.04 f    1.20
+  data arrival time                                                  4.04      
+
+  clock MYclk (rise edge)                                 5.00       5.00      
+  clock network delay (ideal)                             0.00       5.00      
+  comp_top_level/ff_out/CELL_7/FLIPFLOP_0/QTemp_reg/CLK (RDFFARX1_HVT)
+                                                          0.00       5.00 r    
+  library setup time                                     -0.02       4.98      
+  data required time                                                 4.98      
+  ------------------------------------------------------------------------------------
+  data required time                                                 4.98      
+  data arrival time                                                 -4.04      
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                        0.94      
+
+
+1

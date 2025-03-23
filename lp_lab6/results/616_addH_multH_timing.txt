@@ -1,0 +1,94 @@
+Warning: No operating condition has been set explicitly on the current design. A default operating condition will be assumed. (MV-028)
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : dummyALU
+Version: S-2021.06-SP4
+Date   : Mon Jun  3 18:08:13 2024
+****************************************
+Wire Load Model Mode: enclosed
+
+  Startpoint: comp_top_level/ff_mul_in_b/CELL_0/FLIPFLOP_0/QTemp_reg
+              (rising edge-triggered flip-flop clocked by MYclk)
+  Endpoint: comp_top_level/ff_out/CELL_14/FLIPFLOP_0/QTemp_reg
+            (rising edge-triggered flip-flop clocked by MYclk)
+  Path Group: MYclk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  dummyALU           8000                  saed90nm_typ_lvt
+  top_level          8000                  saed90nm_typ_lvt
+  Multiplier_nbit8   8000                  saed90nm_typ_lvt
+
+  Point                                                   Incr       Path      Voltage
+  ------------------------------------------------------------------------------------
+  clock MYclk (rise edge)                                 0.00       0.00      
+  clock network delay (ideal)                             0.00       0.00      
+  comp_top_level/ff_mul_in_b/CELL_0/FLIPFLOP_0/QTemp_reg/CLK (RDFFARX1_HVT)
+                                                          0.00       0.00 r    1.20
+  comp_top_level/ff_mul_in_b/CELL_0/FLIPFLOP_0/QTemp_reg/Q (RDFFARX1_HVT)
+                                                          0.18       0.18 r    1.20
+  comp_top_level/ff_mul_in_b/Q[0] (Reg_nbit8_0)           0.00       0.18 r    
+  comp_top_level/Multiplier_1/B[0] (Multiplier_nbit8)     0.00       0.18 r    
+  comp_top_level/Multiplier_1/B[0]_UPF_LS/Q (LSDNSSX2)
+                                                          0.13       0.31 r    1.20
+  comp_top_level/Multiplier_1/U59/Q (AND2X1_HVT)          0.15       0.46 r    1.20
+  comp_top_level/Multiplier_1/U241/QN (NAND3X0_HVT)       0.12       0.58 f    1.20
+  comp_top_level/Multiplier_1/U53/Q (XNOR2X1_HVT)         0.21       0.79 r    1.20
+  comp_top_level/Multiplier_1/U245/QN (NOR2X0_HVT)        0.11       0.90 f    1.20
+  comp_top_level/Multiplier_1/U246/Q (AO21X1_HVT)         0.13       1.03 f    1.20
+  comp_top_level/Multiplier_1/U248/Q (XOR2X1_HVT)         0.18       1.21 f    1.20
+  comp_top_level/Multiplier_1/U249/QN (NOR2X0_HVT)        0.10       1.32 r    1.20
+  comp_top_level/Multiplier_1/U250/Q (AO21X1_HVT)         0.13       1.45 r    1.20
+  comp_top_level/Multiplier_1/U252/Q (XOR2X1_HVT)         0.19       1.64 f    1.20
+  comp_top_level/Multiplier_1/U253/QN (NOR2X0_HVT)        0.10       1.74 r    1.20
+  comp_top_level/Multiplier_1/U254/Q (AO21X1_HVT)         0.13       1.87 r    1.20
+  comp_top_level/Multiplier_1/U256/Q (XOR2X1_HVT)         0.19       2.06 f    1.20
+  comp_top_level/Multiplier_1/U257/QN (NOR2X0_HVT)        0.10       2.16 r    1.20
+  comp_top_level/Multiplier_1/U258/Q (AO21X1_HVT)         0.13       2.29 r    1.20
+  comp_top_level/Multiplier_1/U32/Q (XOR2X1_HVT)          0.19       2.48 f    1.20
+  comp_top_level/Multiplier_1/U260/QN (NOR2X0_HVT)        0.10       2.58 r    1.20
+  comp_top_level/Multiplier_1/U261/Q (AO21X1_HVT)         0.13       2.72 r    1.20
+  comp_top_level/Multiplier_1/U263/Q (XOR2X1_HVT)         0.19       2.90 f    1.20
+  comp_top_level/Multiplier_1/U265/QN (NOR2X0_HVT)        0.10       3.01 r    1.20
+  comp_top_level/Multiplier_1/U266/Q (AO21X1_HVT)         0.13       3.13 r    1.20
+  comp_top_level/Multiplier_1/U37/QN (NAND2X0_HVT)        0.11       3.24 f    1.20
+  comp_top_level/Multiplier_1/U11/QN (NAND2X0_HVT)        0.09       3.33 r    1.20
+  comp_top_level/Multiplier_1/U9/QN (NAND2X0_HVT)         0.10       3.43 f    1.20
+  comp_top_level/Multiplier_1/U4/QN (NAND2X0_HVT)         0.08       3.51 r    1.20
+  comp_top_level/Multiplier_1/U36/QN (NAND2X0_HVT)        0.11       3.62 f    1.20
+  comp_top_level/Multiplier_1/intadd_9/U4/CO (FADDX1_HVT)
+                                                          0.30       3.92 f    1.20
+  comp_top_level/Multiplier_1/U13/QN (NAND2X0_HVT)        0.08       3.99 r    1.20
+  comp_top_level/Multiplier_1/U56/QN (NAND2X0_HVT)        0.10       4.09 f    1.20
+  comp_top_level/Multiplier_1/U160/Q (AO22X1_HVT)         0.15       4.24 f    1.20
+  comp_top_level/Multiplier_1/U161/Q (XNOR2X1_HVT)        0.22       4.46 r    1.20
+  comp_top_level/Multiplier_1/O[14] (Multiplier_nbit8)
+                                                          0.00       4.46 r    
+  comp_top_level/snps_PD2__iso_cell_PD2_snps_O[14]_UPF_ISO/Q (LSUPENX2)
+                                                          0.11       4.57 r    1.20
+  comp_top_level/U5/Q (AND2X1_HVT)                        0.11       4.67 r    1.20
+  comp_top_level/ff_out/D[14] (Reg_nbit16)                0.00       4.67 r    
+  comp_top_level/ff_out/CELL_14/FLIPFLOP_0/QTemp_reg/D (RDFFARX1_HVT)
+                                                          0.03       4.70 r    1.20
+  data arrival time                                                  4.70      
+
+  clock MYclk (rise edge)                                 5.00       5.00      
+  clock network delay (ideal)                             0.00       5.00      
+  comp_top_level/ff_out/CELL_14/FLIPFLOP_0/QTemp_reg/CLK (RDFFARX1_HVT)
+                                                          0.00       5.00 r    
+  library setup time                                     -0.06       4.94      
+  data required time                                                 4.94      
+  ------------------------------------------------------------------------------------
+  data required time                                                 4.94      
+  data arrival time                                                 -4.70      
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                        0.24      
+
+
+1

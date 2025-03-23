@@ -1,0 +1,128 @@
+set upf_create_implicit_supply_sets false
+set_scope /
+################ POWER DOMAIN DEFINITIONS ##################
+create_power_domain TOP 
+create_power_domain PD1 -elements {comp_top_level/Adder_1}
+create_power_domain PD2 -elements {comp_top_level/Multiplier_1}
+create_power_domain PD3 -elements {comp_top_level/Logic_1}
+create_power_domain PD4 -elements {comp_top_level/LUT_1}
+create_power_domain REGIN -elements {comp_top_level/ff_a comp_top_level/ff_b comp_top_level/ff_LUT}
+create_power_domain REGOUT -elements {comp_top_level/ff_out}
+
+# POWER SUPPLY PORT
+create_supply_port VDDM -domain TOP
+create_supply_port VDDA -domain TOP
+create_supply_port VDDL -domain TOP
+create_supply_port VDDLU -domain TOP
+create_supply_port VBACK -domain TOP
+create_supply_port VSS -domain TOP
+
+#POWER SUPPLY NET (TOP)
+create_supply_net VDDM -domain TOP
+create_supply_net VDDA -domain TOP
+create_supply_net VDDL -domain TOP
+create_supply_net VDDLU -domain TOP
+create_supply_net VBACK -domain TOP
+create_supply_net VSS -domain TOP
+
+#POWER SUPPLY NET (PD1)
+create_supply_net VDDM -domain PD1 -reuse 
+create_supply_net VSS -domain PD1 -reuse 
+create_supply_net VDDMPG -domain PD1			
+
+#POWER SUPPLY NET (PD2)
+create_supply_net VDDA -domain PD2 -reuse
+create_supply_net VSS -domain PD2 -reuse 
+create_supply_net VDDAPG -domain PD2
+
+#POWER SUPPLY NET (PD3)
+create_supply_net VDDL -domain PD2 -reuse
+create_supply_net VSS -domain PD2 -reuse 
+create_supply_net VDDLPG -domain PD2
+
+#POWER SUPPLY NET (PD4)
+create_supply_net VDDLU -domain PD2 -reuse
+create_supply_net VSS -domain PD2 -reuse 
+create_supply_net VDDLUPG -domain PD2
+
+#POWER SUPPLY NET (REGIN)
+create_supply_net VBACK -domain REGIN -reuse
+create_supply_net VSS -domain REGIN -reuse 		
+
+#POWER SUPPLY NET (REGOUT)
+create_supply_net VBACK -domain REGOUT -reuse
+create_supply_net VSS -domain REGOUT -reuse 	
+
+connect_supply_net VDDM -ports {VDDM}
+connect_supply_net VDDA -ports {VDDA}
+connect_supply_net VDDL -ports {VDDL}
+connect_supply_net VDDLU -ports {VDDLU}
+connect_supply_net VBACK -ports {VBACK}
+connect_supply_net VSS -ports {VSS}
+
+set_domain_supply_net PD1 -primary_power_net VDDM -primary_ground_net VSS
+set_domain_supply_net PD2 -primary_power_net VDDA -primary_ground_net VSS
+set_domain_supply_net PD3 -primary_power_net VDDL -primary_ground_net VSS
+set_domain_supply_net PD4 -primary_power_net VDDLU -primary_ground_net VSS
+set_domain_supply_net TOP -primary_power_net VBACK -primary_ground_net VSS
+set_domain_supply_net REGIN -primary_power_net VBACK -primary_ground_net VSS
+set_domain_supply_net REGOUT -primary_power_net VBACK -primary_ground_net VSS
+
+################ POWER GATING DEFINITIONS ##################
+create_power_switch PWRSW_PD1 -domain PD1 -input_supply_port {in VDDM} -output_supply_port {out VDDMPG} -control_port {sleep comp_top_level/turn_off_add} -on_state {ON in {!sleep}} -off_state {OFF {sleep}}
+create_power_switch PWRSW_PD2 -domain PD2 -input_supply_port {in VDDA} -output_supply_port {out VDDAPG} -control_port {sleep comp_top_level/turn_off_mul} -on_state {ON in {!sleep}} -off_state {OFF {sleep}}
+create_power_switch PWRSW_PD3 -domain PD3 -input_supply_port {in VDDL} -output_supply_port {out VDDLPG} -control_port {sleep comp_top_level/turn_off_logic} -on_state {ON in {!sleep}} -off_state {OFF {sleep}}
+create_power_switch PWRSW_PD4 -domain PD4 -input_supply_port {in VDDLU} -output_supply_port {out VDDLUPG} -control_port {sleep comp_top_level/turn_off_LUT} -on_state {ON in {!sleep}} -off_state {OFF {sleep}}
+
+################# LEVEL SHIFTER #################
+set_level_shifter LS1 -domain PD1 -applies_to inputs -rule high_to_low -location self
+set_level_shifter LS2 -domain PD1 -applies_to outputs -rule low_to_high -location parent
+set_level_shifter LS3 -domain PD2 -applies_to inputs -rule high_to_low -location self
+set_level_shifter LS4 -domain PD2 -applies_to outputs -rule low_to_high -location parent
+set_level_shifter LS5 -domain PD3 -applies_to inputs -rule high_to_low -location self
+set_level_shifter LS6 -domain PD3 -applies_to outputs -rule low_to_high -location parent
+set_level_shifter LS7 -domain PD4 -applies_to inputs -rule high_to_low -location self
+set_level_shifter LS8 -domain PD4 -applies_to outputs -rule low_to_high -location parent
+
+################# ISOLATION CELLS ################
+set_isolation iso_cell_PD1 -domain PD1 -isolation_power_net VBACK -isolation_ground_net VSS -clamp_value 0 -applies_to outputs
+set_isolation iso_cell_PD2 -domain PD2 -isolation_power_net VBACK -isolation_ground_net VSS -clamp_value 0 -applies_to outputs
+set_isolation iso_cell_PD3 -domain PD3 -isolation_power_net VBACK -isolation_ground_net VSS -clamp_value 0 -applies_to outputs
+set_isolation iso_cell_PD4 -domain PD4 -isolation_power_net VBACK -isolation_ground_net VSS -clamp_value 0 -applies_to outputs
+
+################# ISOLATION CONTROLS ################
+set_isolation_control iso_cell_PD1 -domain PD1 -isolation_signal comp_top_level/iso_add -isolation_sense low -location parent
+set_isolation_control iso_cell_PD2 -domain PD2 -isolation_signal comp_top_level/iso_mul -isolation_sense low -location parent
+set_isolation_control iso_cell_PD3 -domain PD3 -isolation_signal comp_top_level/iso_logic -isolation_sense low -location parent
+set_isolation_control iso_cell_PD4 -domain PD4 -isolation_signal comp_top_level/iso_LUT -isolation_sense low -location parent
+
+################# RETENTION REGISTERS #################
+set_retention ret_reg_in -domain REGIN -save_signal {comp_top_level/ret_reg_rest_in high} -restore_signal {comp_top_level/ret_reg_rest_in low} -retention_power_net VBACK -retention_ground_net VSS
+map_retention_cell ret_reg_in -domain REGIN -lib_cells {RDFFARX1_HVT RDFFARX2_HVT}
+set_retention ret_reg_out -domain REGOUT -save_signal {comp_top_level/ret_reg_rest_out high} -restore_signal {comp_top_level/ret_reg_rest_out low} -retention_power_net VBACK -retention_ground_net VSS
+map_retention_cell ret_reg_out -domain REGOUT -lib_cells {RDFFARX1_HVT RDFFARX2_HVT}
+
+################### POWER STATE TABLE ##################
+#port state
+add_port_state VDDM -state {HV 0.8} -state {LV 0.75} -state {OFF off}
+add_port_state VDDA -state {HV 1.2} -state {LV 0.75} -state {OFF off}
+add_port_state VDDL -state {HV 0.8} -state {LV 0.75} -state {OFF off}
+add_port_state VDDLU -state {HV 1.2} -state {LV 0.75} -state {OFF off}
+add_port_state VBACK -state {HV 1.2}
+add_port_state PWRSW_PD1/out -state {HV 0.8} -state {LV 0.75} -state {OFF off}
+add_port_state PWRSW_PD2/out -state {HV 1.2} -state {LV 0.75} -state {OFF off}
+add_port_state PWRSW_PD3/out -state {HV 0.8} -state {LV 0.75} -state {OFF off}
+add_port_state PWRSW_PD4/out -state {HV 1.2} -state {LV 0.75} -state {OFF off}
+add_port_state VSS -state {ON 0.0}
+
+#pst
+create_pst top_pst -supplies {VDDM VDDHA VDDL VDDLU VDDMPG VDDAPG VDDLPG VDDLUPG VSS VBACK}
+add_pst_state ADD_HS -pst top_pst -state {HV HV HV OFF ON HV}
+add_pst_state ADD_LS -pst top_pst -state {LV HV LV OFF ON HV}
+add_pst_state MUL_HS -pst top_pst -state {HV HV OFF HV ON HV}
+add_pst_state MUL_LS -pst top_pst -state {HV LV OFF LV ON HV}
+add_pst_state LOGIC_HS -pst top_pst -state {HV HV HV OFF ON HV}
+add_pst_state LOGIC_LS -pst top_pst -state {LV HV LV OFF ON HV}
+add_pst_state LUT_HS -pst top_pst -state {HV HV OFF HV ON HV}
+add_pst_state LUT_LS -pst top_pst -state {HV LV OFF LV ON HV}
+add_pst_state SLEEP -pst top_pst -state {OFF OFF OFF OFF ON HV}

@@ -1,0 +1,46 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : dummyALU
+Version: S-2021.06-SP4
+Date   : Tue Jun  4 17:23:11 2024
+****************************************
+
+
+Library(s) Used:
+
+    saed90nm_typ_hvt (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ_hvt.db)
+    saed90nm_typ (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ.db)
+    saed90nm_typ_nthh_hvt_lsh (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters/saed90nm_typ_nthh_hvt_lsh.db)
+    saed90nm_typ_nthh_lsh (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters/saed90nm_typ_nthh_lsh.db)
+    saed90nm_typ_nthh_hvt_lshss (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters_ss/saed90nm_typ_nthh_hvt_lshss.db)
+    saed90nm_typ_nthh_lshss (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters_ss/saed90nm_typ_nthh_lshss.db)
+    saed90nm_typ_rdr_hvt (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/retention/with_async_reset/saed90nm_typ_rdr_hvt.db)
+
+
+Global Operating Voltage = 1.2  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+dummyALU                                 33.260   81.867 6.45e+06  121.572 100.0
+  comp_top_level (top_level)             27.772   79.290 6.16e+06  113.218  93.1
+    LUT_1 (LUT)                           0.876    2.757 1.59e+05    3.792   3.1
+    Logic_1 (Logic)                       2.104    6.065 3.40e+05    8.509   7.0
+    Adder_1 (Adder_nbit8)                 2.837    8.336 3.20e+05   11.493   9.5
+    Multiplier_1 (Multiplier_nbit8)      18.088   50.048 2.37e+06   70.503  58.0
+    ff_LUT (Reg_nbit8_0)                  0.214    1.352 3.93e+05    1.959   1.6
+    ff_out (Reg_nbit16)                4.19e-04    0.158 7.84e+05    0.942   0.8
+    ff_b (Reg_nbit8_1)                    0.643    1.955 3.93e+05    2.991   2.5
+    ff_a (Reg_nbit8_2)                    0.727    2.057 3.93e+05    3.177   2.6
+1

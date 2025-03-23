@@ -1,0 +1,59 @@
+ 
+****************************************
+Report : area
+Design : dummyALU
+Version: S-2021.06-SP4
+Date   : Mon Jun  3 18:05:22 2024
+****************************************
+
+Library(s) Used:
+
+    saed90nm_typ_hvt (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ_hvt.db)
+    saed90nm_typ_nthn_hvt_lsh (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters/saed90nm_typ_nthn_hvt_lsh.db)
+    saed90nm_typ_ntl_hvt (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ_ntl_hvt.db)
+    saed90nm_typ_nthn_hvt_lshss (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters_ss/saed90nm_typ_nthn_hvt_lshss.db)
+    saed90nm_typ_nthn_lshss (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters_ss/saed90nm_typ_nthn_lshss.db)
+    saed90nm_typ_ntl (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ_ntl.db)
+    saed90nm_typ_ntl_lvt (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ_ntl_lvt.db)
+    saed90nm_typ_nthn_lvt_lshss (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters_ss/saed90nm_typ_nthn_lvt_lshss.db)
+    saed90nm_typ_rdr_hvt (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/retention/with_async_reset/saed90nm_typ_rdr_hvt.db)
+
+Number of ports:                          250
+Number of nets:                           795
+Number of cells:                          566
+Number of combinational cells:            502
+Number of sequential cells:                54
+Number of macros/black boxes:               0
+Number of buf/inv:                         66
+Number of references:                       5
+
+Combinational area:               4880.793661
+Buf/Inv area:                      364.953609
+Noncombinational area:            3120.537600
+Macro/Black Box area:                0.000000
+Net Interconnect area:             329.337525
+
+Total cell area:                  8001.331261
+Total area:                       8330.668786
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  ---------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
+                                  Total      Total    national   national   boxes   Design
+--------------------------------  ---------  -------  ---------  ---------  ------  ----------------
+dummyALU                          8001.3313    100.0    18.4320   124.4160  0.0000  dummyALU
+comp_top_level                    7858.4833     98.2   938.1888    32.2560  0.0000  top_level
+comp_top_level/Adder_1             309.6576      3.9   309.6576     0.0000  0.0000  Adder_nbit8
+comp_top_level/Multiplier_1       3260.6208     40.8  3260.6208     0.0000  0.0000  Multiplier_nbit8
+comp_top_level/ff_mul_in_a         582.4512      7.3    88.4736   493.9776  0.0000  Reg_nbit8_1
+comp_top_level/ff_mul_in_b         582.4512      7.3    88.4736   493.9776  0.0000  Reg_nbit8_0
+comp_top_level/ff_out              987.9552     12.3     0.0000   987.9552  0.0000  Reg_nbit16
+comp_top_level/ff_sum_in_a         582.4512      7.3    88.4736   493.9776  0.0000  Reg_nbit8_3
+comp_top_level/ff_sum_in_b         582.4512      7.3    88.4736   493.9776  0.0000  Reg_nbit8_2
+--------------------------------  ---------  -------  ---------  ---------  ------  ----------------
+Total                                                 4880.7937  3120.5376  0.0000
+
+1

@@ -1,0 +1,4 @@
+remove_design -designs
+source compile_LLLL.src
+remove_design -designs
+source compile_HHHH.src

@@ -1,0 +1,47 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : dummyALU
+Version: S-2021.06-SP4
+Date   : Mon Jun  3 18:05:22 2024
+****************************************
+
+
+Library(s) Used:
+
+    saed90nm_typ_hvt (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ_hvt.db)
+    saed90nm_typ_nthn_hvt_lsh (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters/saed90nm_typ_nthn_hvt_lsh.db)
+    saed90nm_typ_ntl_hvt (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ_ntl_hvt.db)
+    saed90nm_typ_nthn_hvt_lshss (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters_ss/saed90nm_typ_nthn_hvt_lshss.db)
+    saed90nm_typ_nthn_lshss (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters_ss/saed90nm_typ_nthn_lshss.db)
+    saed90nm_typ_ntl (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ_ntl.db)
+    saed90nm_typ_ntl_lvt (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ_ntl_lvt.db)
+    saed90nm_typ_nthn_lvt_lshss (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters_ss/saed90nm_typ_nthn_lvt_lshss.db)
+    saed90nm_typ_rdr_hvt (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/retention/with_async_reset/saed90nm_typ_rdr_hvt.db)
+
+
+Global Operating Voltage = 1.2  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+dummyALU                                 11.839   45.556 1.04e+07   67.820 100.0
+  comp_top_level (top_level)             10.281   43.911 1.03e+07   64.474  95.1
+    Adder_1 (Adder_nbit8)                 0.749    2.364 1.38e+05    3.251   4.8
+    Multiplier_1 (Multiplier_nbit8)       5.032   16.203 6.94e+06   28.175  41.5
+    ff_out (Reg_nbit16)                2.87e-03    2.897 7.87e+05    3.686   5.4
+    ff_mul_in_b (Reg_nbit8_0)             0.367    3.098 4.93e+05    3.958   5.8
+    ff_mul_in_a (Reg_nbit8_1)             0.365    2.932 4.93e+05    3.790   5.6
+    ff_sum_in_b (Reg_nbit8_2)             0.374    2.515 4.93e+05    3.383   5.0
+    ff_sum_in_a (Reg_nbit8_3)             0.373    2.511 4.93e+05    3.378   5.0
+1
