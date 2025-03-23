@@ -1,0 +1,102 @@
+ 
+****************************************
+Report : power
+        -net
+        -analysis_effort low
+        -verbose
+        -sort_mode net_switching_power
+Design : TopLevel_case3
+Version: S-2021.06-SP4
+Date   : Mon Apr 15 16:17:47 2024
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/mg.lowpower/do/libnangate/NangateOpenCellLibrary_typical_ecsm.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+TopLevel_case3         5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+
+  Attributes
+  ----------
+      a  -  Switching activity information annotated on net
+      d  -  Default switching activity information on net
+
+                             Total      Static   Toggle   Switching
+Net                          Net Load   Prob.    Rate     Power      Attrs
+--------------------------------------------------------------------------------
+SEL11                         10.222    0.307    0.0415      0.2565  
+SEL10                          9.211    0.212    0.0435      0.2425  
+SEL01                         10.222    0.190    0.0390      0.2409  
+SEL00                          7.058    0.296    0.0435      0.1858  
+SUM[0]                         0.310    0.244    0.0274      0.0051  
+SUM[3]                         0.310    0.239    0.0274      0.0051  
+SUM[7]                         0.310    0.240    0.0273      0.0051  
+SUM[8]                         0.310    0.238    0.0273      0.0051  
+SUM[10]                        0.310    0.240    0.0272      0.0051  
+SUM[5]                         0.310    0.241    0.0271      0.0051  
+SUM[11]                        0.310    0.243    0.0270      0.0051  
+SUM[14]                        0.310    0.240    0.0270      0.0051  
+SUM[15]                        0.310    0.240    0.0270      0.0051  
+SUM[9]                         0.310    0.241    0.0270      0.0051  
+SUM[1]                         0.310    0.240    0.0270      0.0051  
+SUM[6]                         0.310    0.238    0.0269      0.0050  
+SUM[12]                        0.310    0.241    0.0268      0.0050  
+SUM[2]                         0.310    0.238    0.0268      0.0050  
+SUM[13]                        0.310    0.238    0.0268      0.0050  
+SUM[4]                         0.310    0.238    0.0268      0.0050  
+--------------------------------------------------------------------------------
+Total (20 nets)                                              1.0069 uW
+
+
+
+  Attributes
+  ----------
+      a  -  Switching activity information annotated on net
+      d  -  Default switching activity information on net
+      m  -  Multiply-driven net
+
+                          Net         Driver     Tot Dynamic     Driver
+                          Switching   Internal   Power           Leakage
+Net                       Power       Power      (% Net/Tot)     Power    Attrs
+--------------------------------------------------------------------------------
+SEL11                        0.2565     0.0664     0.323 (79%)    25.1329   
+SEL10                        0.2425     0.0413     0.284 (85%)    16.8027   
+SEL01                        0.2409     0.0534     0.294 (82%)    33.2076   
+SEL00                        0.1858     0.0630     0.249 (75%)    29.3508   
+SUM[0]                    5.139e-03     0.9515     0.957 (1%)     85.7284   
+SUM[3]                    5.138e-03     0.9692     0.974 (1%)     85.7060   
+SUM[7]                    5.117e-03     0.9671     0.972 (1%)     85.6943   
+SUM[8]                    5.111e-03     0.9699     0.975 (1%)     85.6963   
+SUM[10]                   5.106e-03     0.9670     0.972 (1%)     85.6806   
+SUM[5]                    5.071e-03     0.9617     0.967 (1%)     85.6708   
+SUM[11]                   5.069e-03     0.9603     0.965 (1%)     85.7021   
+SUM[14]                   5.067e-03     0.9615     0.967 (1%)     85.6577   
+SUM[15]                   5.067e-03     0.9631     0.968 (1%)     85.6631   
+SUM[9]                    5.065e-03     0.9634     0.969 (1%)     85.6951   
+SUM[1]                    5.058e-03     0.9576     0.963 (1%)     85.6675   
+SUM[6]                    5.046e-03     0.9659     0.971 (1%)     85.6779   
+SUM[12]                   5.026e-03     0.9598     0.965 (1%)     85.6686   
+SUM[2]                    5.023e-03     0.9619     0.967 (1%)     85.6638   
+SUM[13]                   5.022e-03     0.9643     0.969 (1%)     85.6751   
+SUM[4]                    5.015e-03     0.9618     0.967 (1%)     85.6519   
+--------------------------------------------------------------------------------
+Totals (20 nets)             1.007uW   15.630uW   16.637uW (6%)    1.475uW
+1

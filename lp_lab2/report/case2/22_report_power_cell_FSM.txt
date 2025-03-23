@@ -1,0 +1,55 @@
+ 
+****************************************
+Report : power
+        -cell
+        -analysis_effort low
+        -sort_mode cell_internal_power
+Design : top_level_adder8/FSM (FSM_adder8)
+Version: S-2021.06-SP4
+Date   : Wed Apr 10 12:04:13 2024
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/mg.lowpower/do/libnangate/NangateOpenCellLibrary_typical_ecsm.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+top_level_adder8       5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+
+  Attributes
+  ----------
+      h  -  Hierarchical cell
+
+                        Cell      Driven Net  Tot Dynamic      Cell
+                        Internal  Switching   Power            Leakage
+Cell                    Power     Power       (% Cell/Tot)     Power      Attrs
+--------------------------------------------------------------------------------
+PS_reg[0]                  1.0157    0.5157      1.531 (66%)     87.5031   
+PS_reg[2]                  0.7441    0.0686      0.813 (92%)     83.2929   
+PS_reg[1]                  0.6989    0.2865      0.985 (71%)     84.6978   
+U10                        0.0918    0.0250      0.117 (79%)     28.9656   
+U3                         0.0403    0.2776      0.318 (13%)     24.7904   
+U6                         0.0352    0.0136   4.88e-02 (72%)     28.9497   
+U5                         0.0351    0.0165   5.16e-02 (68%)     34.5663   
+U4                         0.0249    0.4542      0.479 (5%)      24.9039   
+U7                      9.993e-03    0.0392   4.92e-02 (20%)     14.3532   
+--------------------------------------------------------------------------------
+Totals (9 cells)           2.696uW   1.697uW     4.393uW (61%)  412.023nW
+1

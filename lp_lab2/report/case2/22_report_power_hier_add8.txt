@@ -1,0 +1,42 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : top_level_adder8
+Version: S-2021.06-SP4
+Date   : Wed Apr 10 12:04:13 2024
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/mg.lowpower/do/libnangate/NangateOpenCellLibrary_typical_ecsm.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+top_level_adder8       5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+top_level_adder8                         10.189   27.810 6.16e+03   44.156 100.0
+  FSM (FSM_adder8)                        1.697    2.696  412.023    4.805  10.9
+  DP (dpadder_8)                          8.493   25.114 5.75e+03   39.351  89.1
+    add_88 (dpadder_8_DW01_add_0)         1.634    4.684 1.19e+03    7.512  17.0
+1

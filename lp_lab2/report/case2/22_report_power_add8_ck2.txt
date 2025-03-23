@@ -1,0 +1,56 @@
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : top_level_adder8
+Version: S-2021.06-SP4
+Date   : Wed Apr 10 12:04:14 2024
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/mg.lowpower/do/libnangate/NangateOpenCellLibrary_typical_ecsm.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+top_level_adder8       5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  = 133.7006 uW   (73%)
+  Net Switching Power  =  48.9878 uW   (27%)
+                         ---------
+Total Dynamic Power    = 182.6884 uW  (100%)
+
+Cell Leakage Power     =   6.1571 uW
+
+
+                Internal     Switching          Leakage         Total
+Power Group     Power        Power              Power           Power   ( %    )  Attrs
+---------------------------------------------------------------------------------------
+io_pad            0.0000        0.0000           0.0000         0.0000  ( 0.00%)
+memory            0.0000        0.0000           0.0000         0.0000  ( 0.00%)
+black_box         0.0000        0.0000           0.0000         0.0000  ( 0.00%)
+clock_network     0.0000        0.0000           0.0000         0.0000  ( 0.00%)
+register         85.5199        4.5826       1.6265e+03        91.7290  (48.57%)
+sequential        0.0000        0.0000           0.0000         0.0000  ( 0.00%)
+combinational    48.1807       44.4052       4.5305e+03        97.1164  (51.43%)
+---------------------------------------------------------------------------------------
+Total           133.7006 uW    48.9878 uW    6.1571e+03 nW    188.8454 uW
+1

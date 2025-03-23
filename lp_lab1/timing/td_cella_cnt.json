@@ -1,0 +1,19 @@
+{signal: 
+  [
+    {name : 'CLK',        wave : 'P....'},
+    {name : 'B0',         wave : '1......0..', node : '.......E', period : 0.5},
+    {name : 'A0',         wave : '0.1.0.1...', node : '..A', period : 0.5, phase : -0.4},
+    {name : 'SUM',        wave : '1...0...1....01.....', node : '....B.........C', period : 0.25, phase : -0.4},
+    {name : 'S',          wave : '0.1.0.1...', node : '..D', period : 0.5}
+  ],
+   
+  config: { hscale: 4 },
+     
+  head:{
+     tick:1,
+     every:1
+  },
+     
+  edge: ['D-~>A', 'D-~>B', 'E-~>C'],
+ 
+}

@@ -1,0 +1,22 @@
+{signal: 
+  [
+    {name : 'CLK',        wave : 'P.......'},
+    {name : 'CEN', 		  wave : '1.......'},
+    {name : 'S0',         wave : '10101010', phase : -0.1},
+    {name : 'C0',         wave : '10101010', phase : -0.2, node : '.ABC.DEF'},
+    {name : 'S1',         wave : '01.0.1.0', phase : -0.3, node : '.G.H.I.J'},
+    {name : 'C1',         wave : '0.10..10', phase : -0.4, node : '..KL..MN'},
+    {name : 'S2',         wave : '0..1...0', phase : -0.5, node : '...O...P'},
+    {name : 'C2',         wave : '0.....10', phase : -0.6, node : '......Q'}
+  ],
+   
+  config: { hscale: 3 },
+     
+  head:{
+     tick:1,
+     every:1
+  },
+     
+  edge: ['A-~>G', 'C-~>H', 'D-~>I', 'F-~>J', 'B-~>K', 'E-~>M', 'L-~>O', 'N-~>P', 'M-~>Q'],
+ 
+}

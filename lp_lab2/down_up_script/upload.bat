@@ -1,0 +1,1 @@
+scp -P 10037 -r ./up lp24.8@led-x3850-2.polito.it:~/

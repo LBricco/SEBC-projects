@@ -1,0 +1,34 @@
+ 
+****************************************
+Report : FSM
+Design : top_level_adder8
+Version: S-2021.06-SP4
+Date   : Wed Apr 10 12:04:13 2024
+****************************************
+
+Design : FSM_adder8
+Filename : /home/lp24.8/Desktop/ese2/adder8/FSM_adder8.vhd
+Clock             : FSM/CK      
+Asynchronous Reset: FSM/RST     
+
+
+Current Encoding (length/style)     : 3 / binary
+State Vector: { PS_reg[2] PS_reg[1] PS_reg[0] }
+
+
+FSM_COMPLETE : FALSE
+Re-Encoding style     : NONE
+
+
+State Encodings and Order: 
+
+AB         : 000
+XC         : 001
+XD         : 011
+XE         : 010
+XF         : 110
+XG         : 111
+XH         : 101
+
+
+1

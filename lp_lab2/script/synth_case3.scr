@@ -1,0 +1,17 @@
+sh mkdir WORK
+define_design_lib WORK -path ./WORK
+analyze -library WORK -format vhdl {../dpadder.vhd ../FSM_case3.vhd ../TopLevel_case3.vhd}
+elaborate TopLevel_case3 -library WORK
+create_clock -name "CLK" -period 10 {CK}
+compile -exact_map
+report_area
+report_fsm
+report_timing
+uplevel #0 { report_timing -path full -delay max -nworst 10 -max_paths 1 -significant_digits 2 -sort_by group }
+report_power > 23_report_power_add6.txt
+report_power -hier
+report_power -net
+report_power -net -verbose > 23_report_power_net_verbose_add6.txt
+current_instance FSM
+report_power -cell
+report_power -net

@@ -1,0 +1,52 @@
+****************************************
+Report : power
+        -analysis_effort low
+Design : TopLevel_adder6
+Version: S-2021.06-SP4
+Date   : Wed Apr 10 10:37:12 2024
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/mg.lowpower/do/libnangate/NangateOpenCellLibrary_typical_ecsm.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+TopLevel_adder6        5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  = 140.4136 uW   (73%)
+  Net Switching Power  =  53.0663 uW   (27%)
+                         ---------
+Total Dynamic Power    = 193.4799 uW  (100%)
+
+Cell Leakage Power     =   5.6144 uW
+
+
+                Internal       Switching         Leakage        Total
+Power Group     Power          Power             Power          Power   ( %    )  Attrs
+---------------------------------------------------------------------------------------
+io_pad            0.0000          0.0000          0.0000        0.0000  ( 0.00%)
+memory            0.0000          0.0000          0.0000        0.0000  ( 0.00%)
+black_box         0.0000          0.0000          0.0000        0.0000  ( 0.00%)
+clock_network     0.0000          0.0000          0.0000        0.0000  ( 0.00%)
+register         89.4123          1.9087      1.6302e+03       92.9511  (46.69%)
+sequential        0.0000          0.0000          0.0000        0.0000  ( 0.00%)
+combinational    51.0014         51.1576      3.9841e+03      106.1431  (53.31%)
+---------------------------------------------------------------------------------------
+Total           140.4136 uW      53.0663 uW   5.6144e+03 nW   199.0943 uW
+1

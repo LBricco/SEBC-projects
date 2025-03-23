@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : area
+Design : top_level_adder8
+Version: S-2021.06-SP4
+Date   : Wed Apr 10 12:04:13 2024
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/mg.lowpower/do/libnangate/NangateOpenCellLibrary_typical_ecsm.db)
+
+Number of ports:                          416
+Number of nets:                           582
+Number of cells:                          170
+Number of combinational cells:            147
+Number of sequential cells:                19
+Number of macros/black boxes:               0
+Number of buf/inv:                         21
+Number of references:                       2
+
+Combinational area:                231.420005
+Buf/Inv area:                       11.172000
+Noncombinational area:             101.080003
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                   332.500008
+Total area:                 undefined
+1

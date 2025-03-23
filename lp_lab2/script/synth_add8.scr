@@ -1,0 +1,23 @@
+sh mkdir WORK
+define_design_lib WORK -path ./WORK
+analyze -library WORK -format vhdl {../dpadder_8.vhd ../FSM_adder8.vhd ../top_level_adder8.vhd}
+elaborate top_level_adder8 -library WORK
+create_clock -name "CLK" -period 10 {CK}
+compile -exact_map
+report_area > 22_report_area_add8.txt
+report_fsm > 22_report_fsm_add8.txt
+report_timing > 22_report_timing_add8.txt
+uplevel #0 { report_timing -path full -delay max -nworst 10 -max_paths 1 -significant_digits 2 -sort_by group } > 22_report_timing_nworst10_add8.txt
+report_power > 22_report_power_add8.txt
+report_power -hier > 22_report_power_hier_add8.txt
+report_power -net > 22_report_power_net_add8.txt
+report_power -net -verbose > 22_report_power_net_verbose_add8.txt
+current_instance FSM
+report_power -cell > 22_report_power_cell_FSM.txt
+report_power -net > 22_report_power_net_FSM.txt
+current_instance
+create_clock -name "CLK" -period 2.08 {CK}
+report_timing > 22_report_timing_add8_ck2.txt
+report_power > 22_report_power_add8_ck2.txt
+report_power -hier > 22_report_power_hier_add8_ck2.txt
+report_power -net -verbose > 22_report_power_net_verbose_add8_ck2.txt
